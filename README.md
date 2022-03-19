@@ -105,18 +105,18 @@ Reference guide for scanning networks with Nmap.
     7. [Trace Packets](#trace-packets)  
     8. [Display Host Networking](#display-host-networking)  
     9. [Specify a Network Interface](#specify-a-network-interface)  
-12. Nmap Scripting Engine  
-    1. [Execute Individual Scripts](#execute-individual-scripts)  
-    2. [Execute Multiple Scripts](#execute-multiple-scripts)  
-    3. [Execute Scripts by Category](#execute-scripts-by-category)  
-    4. [Execute Multiple Script Categories](#execute-multiple-script-categories)  
-    5. [Troubleshoot Scripts](#troubleshoot-scripts)  
-    6. [Update the Script Database](#update-the-script-database)  
+12. Nmap 腳本引擎  
+    1. [執行個體腳本](#execute-individual-scripts)  
+    2. [執行多重腳本](#execute-multiple-scripts)  
+    3. [依照分類執行腳本](#execute-scripts-by-category)  
+    4. [執行多重腳本分類](#execute-multiple-script-categories)  
+    5. [疑難排除腳本](#troubleshoot-scripts)  
+    6. [更新腳本資料庫](#update-the-script-database)  
 
-## What is Nmap?
+## 什麼是 Nmap?
 Nmap ("Network Mapper") is a free and open source utility for network discovery and security auditing. Many systems and network administrators also find it useful for tasks such as network inventory, managing service upgrade schedules, and monitoring host or service uptime. Nmap uses raw IP packets in novel ways to determine what hosts are available on the network, what services (application name and version) those hosts are offering, what operating systems (and OS versions) they are running. It was designed to rapidly scan large networks, but works fine against single hosts.
 
-## How to Use Nmap
+## 如何使用 Nmap
 Nmap can be used in a variety of ways depending on the user's level of technical expertise.
 
 | Technical Expertise | Usage |
@@ -125,12 +125,12 @@ Nmap can be used in a variety of ways depending on the user's level of technical
 | Intermediate        | [Command line](https://nmap.org/) |
 | Advanced            | Python scripting with the [Python-Nmap](https://pypi.org/project/python-nmap/) package |
 
-### Command Line
+### 指令列
 ```shell
 nmap [ <Scan Type> ...] [ <Options> ] { <target specification> }
 ```
 
-## Basic Scanning Techniques
+## 基本掃描技巧
 The `-s` switch determines the type of scan to perform.
 
 | Nmap Switch | Description                 |
@@ -148,27 +148,27 @@ The `-s` switch determines the type of scan to perform.
 | **-sW**     | Windows scan                |
 | **-sX**     | XMAS scan                   |
 
-### Scan a Single Target
+### 掃描單一目標
 ```shell
 nmap [target]
 ```
 
-### Scan Multiple Targets
+### 掃描多重目標
 ```shell
 nmap [target1, target2, etc]
 ```
 
-### Scan a List of Targets
+### 掃描清單目標
 ```shell
 nmap -iL [list.txt]
 ```
 
-### Scan a Range of Hosts
+### 掃描範圍主機
 ```shell
 nmap [range of IP addresses]
 ```
 
-### Scan an Entire Subnet
+### 掃描整個子網段
 ```shell
 nmap [ip address/cdir]
 ```
